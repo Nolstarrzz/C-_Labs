@@ -16,6 +16,7 @@ int main()
     display_result(results);
 }
 
+//getting values from the user
 void get_input(double degrees_f[])
 {
     cout << "Please enter 5 temperatures to convert:";
@@ -25,6 +26,7 @@ void get_input(double degrees_f[])
     }
 }
 
+//uses the equation to convert farenheit to celsius
 void convert_to_celsius(double degrees_f[], double degrees_c[])
 {
     for(int i=0;i<5;i++)
@@ -32,7 +34,7 @@ void convert_to_celsius(double degrees_f[], double degrees_c[])
         degrees_c[i] = (5.0/9.0)*(degrees_f[i] - 32.0); 
     }
 }
-
+//gives the values of the array to the resulting array
 void give_results(double degrees_c[], double results[])
 {
     for(int i=0;i<5;i++)
@@ -41,11 +43,12 @@ void give_results(double degrees_c[], double results[])
     }
 }
 
+//displays the results from the array
 void display_result(double results[])
 {
     for(int i=0;i<5;i++)
     {
-        cout << results[i] << endl;
+        cout << "Your converted temps are: " << results[i] << endl;
     }
 }
 
