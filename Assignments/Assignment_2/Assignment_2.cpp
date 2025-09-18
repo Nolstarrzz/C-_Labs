@@ -2,8 +2,7 @@
 using namespace std;
 void get_input(double degrees_f[]);
 void convert_to_celsius(double degrees_f[], double degrees_c[]);
-void display_result(double results[]);
-void give_results(double degrees_c[], double results[]);
+void display_result(double degrees_c[]);
 
 int main() 
 {
@@ -12,8 +11,7 @@ int main()
     double degrees_f[5];
     get_input(degrees_f);
     convert_to_celsius(degrees_f, degrees_c);
-    give_results(degrees_c, results);
-    display_result(results);
+    display_result(degrees_c);
 }
 
 //getting values from the user
@@ -34,21 +32,13 @@ void convert_to_celsius(double degrees_f[], double degrees_c[])
         degrees_c[i] = (5.0/9.0)*(degrees_f[i] - 32.0); 
     }
 }
-//gives the values of the array to the resulting array
-void give_results(double degrees_c[], double results[])
-{
-    for(int i=0;i<5;i++)
-    {
-        results[i] = degrees_c[i];
-    }
-}
 
 //displays the results from the array
-void display_result(double results[])
+void display_result(double degrees_c[])
 {
     for(int i=0;i<5;i++)
     {
-        cout << "Your converted temps are: " << results[i] << endl;
+        cout << "Your converted temps are: " << degrees_c[i] << endl;
     }
 }
 
@@ -75,4 +65,7 @@ in the function
 Solution-> avg = (a + b + c) / 3;
 
 Line 3-> Syntax error, variables not initialized in the function 
+
+Line 11-> Syntax Error, using endline, when it should be endl
+Solution: cout <<  compute_average(x,y,z) << endl;
 */
