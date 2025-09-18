@@ -6,9 +6,12 @@ void display_result(double degrees_c[]);
 
 int main() 
 {
+    //initializing the arrays
     double results[5];
     double degrees_c[5];
     double degrees_f[5];
+
+    //calling functions
     get_input(degrees_f);
     convert_to_celsius(degrees_f, degrees_c);
     display_result(degrees_c);
