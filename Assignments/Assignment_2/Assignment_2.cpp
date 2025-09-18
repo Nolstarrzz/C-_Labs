@@ -44,11 +44,21 @@ void display_result(double degrees_c[])
 
 /*
 Question 1:
--Memory Management
--Null Termination
--Functionality and Operators
--Type Safety
--Dynamic Sizing
+Memory Management
+    C-style: Manual, prone to buffer overflows.
+    C++ string: Automatic memory management.
+Null Termination
+    C-style: Always ends with '\0'.
+    C++ string: No null terminator needed; length is stored internally.
+Functionality and Operators
+    C-style: Needs library functions (strcpy, strcmp, etc.).
+    C++ string: Rich set of built-in operators (+, ==, <, etc.) and methods (.length(), .substr()).
+Type Safety
+    C-style: Just a char array (decays to pointer), weaker type checking.
+    C++ string: Strong type, works safely with other C++ standard types.
+Dynamic Sizing
+    C-style: Fixed size once allocated, resizing is manual.
+    C++ string: Can grow or shrink dynamically as needed.
 
 Question 2:
 
@@ -64,7 +74,8 @@ line 19-> Possible out of bounds error, using different variables then allowed
 in the function
 Solution-> avg = (a + b + c) / 3;
 
-Line 3-> Syntax error, variables not initialized in the function 
+Line 3-> Syntax error, variables not initialized in the function
+Solution: int compute_average(int a, int b, int c);
 
 Line 11-> Syntax Error, using endline, when it should be endl
 Solution: cout <<  compute_average(x,y,z) << endl;
