@@ -15,15 +15,22 @@ struct GIC
 float calculate_interest(GIC account);
 void display_account(GIC account, float interest);
 GIC get_account_values();
+void do_gic();
 
 int main()
+{
+    do_gic();
+    do_gic();
+    return 0;
+}
+
+void do_gic()
 {
     float interest;
     GIC account;
     account = get_account_values();
     interest = calculate_interest(account);
     display_account(account, interest);
-    return 0;
 }
 
 //calculate interest using an equation
@@ -67,17 +74,17 @@ such as a bank account getting affected by deposits, tax and interest, they all 
 Question 2:
 enum Month_Length{
     JAN = 31,
-    FEB = 30,
+    FEB = 28,
     MAR = 31,
     APR = 30,
     MAY = 31,
     JUN = 30,
     JUL = 31,
-    AUG = 30,
-    SEP = 31,
-    OCT = 30,
-    NOV = 31,
-    DEC = 30
+    AUG = 31,
+    SEP = 30,
+    OCT = 31,
+    NOV = 30,
+    DEC = 31
 };
 
 */
