@@ -24,6 +24,7 @@ int main()
     return 0;
 }
 
+//does all the functions together in one so its easier to do it multiple times
 void do_gic()
 {
     float interest;
