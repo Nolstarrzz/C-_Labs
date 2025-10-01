@@ -73,6 +73,7 @@ the program. They are useful if the program is designed to reuse and change vari
 such as a bank account getting affected by deposits, tax and interest, they all should be able to change the variable
 
 Question 2:
+A enum that describes the length of each month of the year has to have each month in it as well as all their respective values
 enum Month_Length{
     JAN = 31,
     FEB = 28,
