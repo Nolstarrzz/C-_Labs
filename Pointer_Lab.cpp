@@ -32,7 +32,7 @@ void move_point(Point& p, float x, float y)
 
 void print_point(Point* p)
 {
-  cout << "The new position of the point is: (4, 8) " << p->x << " " << p->y;
+  cout << "The new position of the point is: " << p->x << " " << p->y;
 }
 
 int main ()
