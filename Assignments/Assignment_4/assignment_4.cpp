@@ -28,7 +28,7 @@ int main()
 void display_result_snake_eyes(long value)
 {
   cout << endl << "Trying to roll double 1s..." << endl 
-  << "omg it took " << value << " rolls to get snake eyes!";
+  << "omg it took " << value << " rolls to get snake eyes!" << endl;
 }
 
 void display_result(long numbers[])
@@ -38,15 +38,9 @@ void display_result(long numbers[])
   << endl << "3 was rolled " << numbers[2] <<  " times"
   << endl << "4 was rolled " << numbers[3] <<  " times"
   << endl << "5 was rolled " << numbers[4] <<  " times"
-  << endl << "6 was rolled " << numbers[5] <<  " times";
+  << endl << "6 was rolled " << numbers[5] <<  " times" << endl;
 }
 
-/*
-  roll a 1 
-  if it was a one then store it
-  roll again
-  if i was a one again, then it was snake eyes
-*/
 int snake_eyes_roller()
 {
   int total_rolls = 0;
@@ -63,7 +57,8 @@ int snake_eyes_roller()
       if(snake_eye_checker == 2)
       {
         num_snake_eyes++;
-        break;
+        total_rolls++;
+        return total_rolls;
       }
     }
     total_rolls++;
@@ -84,5 +79,23 @@ void get_number_of_rolls(long &rolls)
 {
   cout << "Let’s roll some dice!" << endl << "Please enter the number of rolls to make: ";
   cin >> rolls;
-  cout << "Rolling...";
+  cout << "Rolling..." << endl;
 }
+
+/*
+Question 1:
+Pointers allow the creation and manipulation of 
+arrays whose sizes are determined at runtime.
+This is because a pointer can reference memory 
+allocated dynamically, and pointer arithmetic 
+lets us access array elements regardless of the 
+array’s size.
+
+Question 2:
+Vectors are more efficient and flexible than 
+standard arrays because they can automatically 
+resize during runtime.
+They allocate space as needed, so the program 
+always has the right amount of memory for its 
+data, avoiding wasted space or overflow errors.
+*/
