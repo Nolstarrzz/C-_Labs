@@ -75,7 +75,7 @@ void roll_dice(long &rolls, long *pointer)
 
 void get_number_of_rolls(long &rolls)
 {
-  cout << "Let’s roll some dice!" << endl << "Please enter the number of rolls to make: ";
+  cout << "Let's roll some dice!" << endl << "Please enter the number of rolls to make: ";
   cin >> rolls;
   cout << "Rolling..." << endl;
 }
