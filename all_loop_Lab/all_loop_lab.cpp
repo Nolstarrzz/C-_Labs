@@ -4,6 +4,7 @@
 #include <string>
 using namespace std;
 
+const int CYPHER_OFFSET = 5;
 void getSecretText(char text[50]);
 string getFileName();
 
@@ -15,7 +16,7 @@ char encrypt(char c)
     {
         if(isupper(encrypted))
         {
-            for(int counter = 0; counter < 5; counter++)
+            for(int counter = 0; counter < CYPHER_OFFSET; counter++)
             {
                 if(encrypted == 90)
                 {
@@ -27,7 +28,7 @@ char encrypt(char c)
         }
         if(islower(encrypted))
         {
-            for(int counter = 0; counter < 5; counter++)
+            for(int counter = 0; counter < CYPHER_OFFSET; counter++)
             {
                 if(encrypted == 122)
                 {
@@ -40,7 +41,7 @@ char encrypt(char c)
     }
     else if(isdigit(encrypted))
     {
-        for(int counter = 0; counter < 5; counter++)
+        for(int counter = 0; counter < CYPHER_OFFSET; counter++)
             {
                 if(encrypted == 57)
                 {
@@ -68,7 +69,7 @@ int main()
 {
     ifstream fin;
     ofstream fout;
-    char secret_text[50];
+    char secret_text[100];
 
     // get the filename to save to
     string filename = getFileName();
