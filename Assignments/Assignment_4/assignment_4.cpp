@@ -45,7 +45,6 @@ int snake_eyes_roller()
 {
   int total_rolls = 0;
   int snake_eye_checker = 0;
-  int num_snake_eyes;
   while(true)
   {
     int checker;
@@ -56,7 +55,6 @@ int snake_eyes_roller()
       snake_eye_checker++;
       if(snake_eye_checker == 2)
       {
-        num_snake_eyes++;
         total_rolls++;
         return total_rolls;
       }
@@ -77,7 +75,7 @@ void roll_dice(long &rolls, long *pointer)
 
 void get_number_of_rolls(long &rolls)
 {
-  cout << "Let’s roll some dice!" << endl << "Please enter the number of rolls to make: ";
+  cout << "Let's roll some dice!" << endl << "Please enter the number of rolls to make: ";
   cin >> rolls;
   cout << "Rolling..." << endl;
 }
