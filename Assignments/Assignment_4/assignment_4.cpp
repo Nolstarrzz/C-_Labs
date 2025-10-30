@@ -11,6 +11,7 @@ void display_result_snake_eyes(long value);
 
 int main() 
 {
+  //sets the random number generator
   srand(time(0));
   long distribution_of_numbers[6] = {0};
   long total;
@@ -24,13 +25,13 @@ int main()
   
   return 0;
 }
-
+//displays the results
 void display_result_snake_eyes(long value)
 {
   cout << endl << "Trying to roll double 1s..." << endl 
   << "omg it took " << value << " rolls to get snake eyes!" << endl;
 }
-
+//displays the results to screen
 void display_result(long numbers[])
 {
   cout << "1 was rolled " << numbers[0] <<  " times"
@@ -40,7 +41,7 @@ void display_result(long numbers[])
   << endl << "5 was rolled " << numbers[4] <<  " times"
   << endl << "6 was rolled " << numbers[5] <<  " times" << endl;
 }
-
+//rolls numbers until 2 "1"s are rolled in succession then it breaks the loop and returns a value
 int snake_eyes_roller()
 {
   int total_rolls = 0;
@@ -63,7 +64,7 @@ int snake_eyes_roller()
   }
     return total_rolls;
 }
-
+//rolls the number of dices asked for and adds one to the index of the array associated with the roll
 void roll_dice(long &rolls, long *pointer)
 {
   for(long i = 0; i < rolls; i++)
@@ -72,7 +73,7 @@ void roll_dice(long &rolls, long *pointer)
     pointer[temp_roll]++;
     }
 }
-
+//gets the number of rolls from an input from the user
 void get_number_of_rolls(long &rolls)
 {
   cout << "Let's roll some dice!" << endl << "Please enter the number of rolls to make: ";
