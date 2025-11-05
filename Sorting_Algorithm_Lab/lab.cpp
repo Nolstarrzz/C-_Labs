@@ -11,7 +11,7 @@ void build_array(int array[]);
 void sort_array(int array[], int left, int right);
 // array is sorted in place in ascending order
 
-bool array_contains(const int array[], int num, int& position);
+bool array_contains(const int array[], int num, int& position, int first, int last);
 // returns true if num is found in array, false otherwise.
 // position is updated with the index of num when found or -1 if not.
 
@@ -101,9 +101,29 @@ void display_array(int array[])
     }
 }
 
-bool array_contains(const int array[], int num, int& position)
+bool array_contains(const int array[], int num, int& position, int first, int last)
 {
-
+    int mid = first + (last-first)/2;
+    if(array[mid] == num)
+    {
+        position = mid;
+        return true;
+    }
+    else if(num < arr[mid])
+    {
+        last = mid - 1;
+        array_contains(array,num,position,first,last);
+    }
+    else if(num > arr[mid])
+    {
+        right = mid + 1;
+        array_contains(array,num,position,first,last);
+    }
+    else
+    {
+        return false;
+    }
+    
 }
 
 void merge(int arr[], int left[], int leftSize, int right[], int rightSize)
