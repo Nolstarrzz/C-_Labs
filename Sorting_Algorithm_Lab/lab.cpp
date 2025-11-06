@@ -64,7 +64,7 @@ void build_array(int array[])
         }
 }
 
-/*void sort_array(int array[], int left, int right)
+void sort_array(int array[], int left, int right)
 {
     if(left >= right)
         return;
@@ -76,42 +76,12 @@ void build_array(int array[])
     {
         leftArr[i] = array[left + i];
     }
+    cout << endl;
     for(int i=0; i<right - mid; i++)
     {
         rightArr[i] = array[mid + 1 + i];
     }
     merge(array, leftArr, mid-left+1, rightArr, right-mid);
-}*/
-void sort_array(int array[], int left, int right)
-{
-    if(left >= right)
-        return;
-    
-    int mid = left + (right - left) / 2;
-    
-    sort_array(array, left, mid);      // sort left half
-    sort_array(array, mid + 1, right); // sort right half
-    
-    int leftSize = mid - left + 1;
-    int rightSize = right - mid;
-    
-    // VLA's (Variable Length Arrays) are a GCC extension, often avoided in C++
-    // but OK for this context.
-    int leftArr[leftSize], rightArr[rightSize];
-    
-    // Correctly copy elements from array[left] up to array[mid]
-    for(int i = 0; i < leftSize; i++) // use < leftSize to avoid index error
-    {
-        leftArr[i] = array[left + i]; // FIXED: Use array[left + i]
-    }
-    
-    // Correctly copy elements from array[mid + 1] up to array[right]
-    for(int i = 0; i < rightSize; i++)
-    {
-        rightArr[i] = array[mid + 1 + i];
-    }
-    
-    merge(array, leftArr, leftSize, rightArr, rightSize);
 }
 
 void get_input(int& num)
@@ -132,7 +102,6 @@ void display_array(int array[])
     }
 }
 
-
 bool array_contains(const int array[], int num, int& position, int first, int last)
 {
     int mid = first + (last-first)/2;
@@ -151,19 +120,14 @@ bool array_contains(const int array[], int num, int& position, int first, int la
         first = mid + 1;
         return array_contains(array,num,position,first,last);
     }
-    else
-    {
-        position = -1;
-        return false;
-    }
     
+    position = -1;
+    return false; 
 }
 
-
-
-
-void merge(int arr[], int left[], int leftSize, int right[], int rightSize) 
+void merge(int arr[], int left[], int leftSize, int right[], int rightSize)
 {
+    {
     int i = 0, j = 0, k = 0;
     while (i < leftSize && j < rightSize) {
         if (left[i] <= right[j]) {
@@ -171,13 +135,12 @@ void merge(int arr[], int left[], int leftSize, int right[], int rightSize)
         } else {
             arr[k++] = right[j++];
         }
-    }
+        }
     while (i < leftSize) {
         arr[k++] = left[i++];
-    }
+        }
     while (j < rightSize) {
         arr[k++] = right[j++];
+        }
     }
 }
-
-
