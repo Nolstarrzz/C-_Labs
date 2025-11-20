@@ -167,9 +167,10 @@ void play_rps(int rounds, bool advanced) {
 
     // run the game for the given number of rounds 
     for (int i = 0; i < rounds; i++) {
+        int var = i+1;
         string winner;
         rpsmove player_move, computer_move;
-        cout << "Round " << i << " - ";
+        cout << "Round " << var << " - ";
         // get player and computer moves
         player_move = get_user_move(advanced);
         computer_move = get_computer_move(advanced);
@@ -194,7 +195,7 @@ void play_rps(int rounds, bool advanced) {
     if(p_wins > c_wins)
         cout << "Congratulations! You won the game." << endl;
     else
-        cout << "Aw, the Computer won the game.";
+        cout << "Aw, the Computer won the game." << endl;
     // display final results
 
 }
